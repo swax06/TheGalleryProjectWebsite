@@ -45,6 +45,10 @@ a {
     color: #9fa3a7;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 a:focus,
 a:hover {
     color: #6fc754;
@@ -673,6 +677,7 @@ html, body {
 
 .site-main {
     padding-top: 80vh;
+    position: relative;
 }
 
 /* Navigation */
@@ -808,6 +813,7 @@ header {
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;
+    position: relative;
 }
 
 .landing-info {
@@ -819,8 +825,8 @@ header {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    object-fit: cover;
     z-index: -1;
+    object-fit: cover;
 }
 
 .transition {
@@ -828,8 +834,9 @@ header {
     transform: translateZ(-5px) scale(1.5);
     position: absolute;
     width: 100vw;
-    height: 40vh;
-    margin-top: 35vh;
+    height: 50vh;
+    margin-top: 11vh;
+    margin-bottom: 80vh;
     z-index: -1;
 }
 
@@ -840,8 +847,8 @@ header {
 }
 
 .foreground {
+    margin-top: 180px;
     transform: translateZ(-5px) scale(1.5);
-    margin-top: 65vh;
 }
 
 .overlay:before {
@@ -862,16 +869,18 @@ header {
 }
 
 .hero-text {
-    max-width: 890px;
-    width: 100%;
+    /* max-width: 50vw; */
+    width: 50vw;
     margin: 0 auto;
     padding: 0 15px;
-    text-align: center;
+    float: left;
+    /* text-align: center; */
 }
 
 .hero-text h1 {
     position: relative;
     margin: 0;
+    text-shadow: 0px 0px 6px white;
     /* color: white;
     text-shadow: 0 0 5px black;; */
 }
@@ -881,6 +890,7 @@ header {
     margin: 45px 0 30px;
     font-size: 20px;
     color: #26272d;
+    text-shadow: 0px 0px 6px white;
     /* color: white;
     text-shadow: 0 0 5px black;; */
 }
@@ -888,6 +898,7 @@ header {
 .hero-text .btn {
     position: relative;
     background-color: transparent;
+    text-shadow: 0px 0px 6px white;
     /* color: white;
     text-shadow: 0 0 5px black;; */
 }
@@ -989,11 +1000,16 @@ header {
 
 .section-features img {
     position: absolute;
-    right: 15px;
-    height: 380px;
+    height: 300px;
 }
 
 /* Section: Services */
+.section-services{
+    padding: 3em;
+    height: 100vh;
+    transform: translateY(2px);
+}
+
 .section-services .subheading-text {
     margin-bottom: 90px;
 }
@@ -1655,4 +1671,39 @@ a.discord-bg:hover {
 .section-map {
   height: 500px;
   width: 100%
+}
+
+@keyframes headerAnimation{
+    0%{
+        transform: rotate(0) translateY(-20%);
+        opacity: 0.2;
+        }
+    100%{
+        transform: rotate(0);
+        opacity: 1;
+        }
+}
+
+.main-header{
+    animation: headerAnimation 1s forwards 0s linear;
+}
+
+@keyframes mapAnimation{
+    0%{
+        transform: scale(0.5);
+        }
+    100%{
+        transform: rotate(xx) scale(1);
+        }
+}
+
+.map{
+    animation: mapAnimation 1s forwards 0s linear;
+}
+
+.progress-bar{
+    width: 100%;
+    background: red;
+    display: block;
+    height: 10px;
 }
